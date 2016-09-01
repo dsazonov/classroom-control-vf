@@ -58,5 +58,8 @@ node default {
   
 #  include users
 #  include skeleton
-  
-}
+  if $virtual == "docker" {
+    $virt = capitalize($::virtual)
+    notify { "Its virtual ${virt} or capitalize(${::virtual})": }
+  }
+} 
