@@ -12,7 +12,7 @@ class memcached {
     source => 'puppet:///modules/memcached/memcached',
   }
   service { 'memcached':
-    enabled => true,
+    enable => true,
     ensure  => running,
   }
 
