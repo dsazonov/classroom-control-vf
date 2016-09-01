@@ -30,3 +30,4 @@ class nginx {
     group  => 'root',
     mode   => '0775',
   }
+}
