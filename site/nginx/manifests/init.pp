@@ -1,11 +1,12 @@
 class nginx {
-  package { 'nginx':
-    ensure => present,
-  }
-  file {
+  File {
     owner => 'root',
     group => 'root',
     mode  => '0664',
+  }
+  
+  package { 'nginx':
+    ensure => present,
   }
   file { '/var/www':
     ensure => directory,
