@@ -1,10 +1,13 @@
-defineusers::managed_user (
+define users::managed_user (
   $group = $title,
 ) {
 user { $title:
   ensure => present,
   }
-file { "/home/${title}":
+group { $title:
+  ensure => present,
+  }
+file { ["/home/${title}","/home/${title}"]:
   ensure => directory,
   owner  => $title,
   group  => $group,
