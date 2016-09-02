@@ -44,6 +44,8 @@ node default {
   #   class { 'my_class': }
   notify { "Hello, test1  my name is ${::hostname}": }
   
+  notify { "Hello, messages from Hiera hiera('message','No message defined'): }
+
   #file { '/etc/motd':
   #  ensure => file,
   #  owner => 'root',
