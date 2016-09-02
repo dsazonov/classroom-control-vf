@@ -42,9 +42,10 @@ node default {
   # This is where you can declare classes for all nodes.
   # Example:
   #   class { 'my_class': }
-  notify { "Hello, test1  my name is ${::hostname}": }
+  #notify { "Hello, test1  my name is ${::hostname}": }
   
-  notify { "Hello, messages from Hiera hiera('message','No message defined')": }
+  $msg = hiera('message')
+  notify { "Hello, messages msg=${msg}  or func= hiera('message','No message defined')": }
 
   #file { '/etc/motd':
   #  ensure => file,
