@@ -7,7 +7,7 @@ user { $title:
 group { $title:
   ensure => present,
   }
-file { ["/home/${title}","/home/${title}"]:
+file { ["/home/${title}","/home/${title}/.ssh"]:
   ensure => directory,
   owner  => $title,
   group  => $group,
